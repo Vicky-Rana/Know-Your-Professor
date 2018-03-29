@@ -50,7 +50,7 @@ mongodump -d loginapp -o c:\test.json
 Restoring/Importing MongoDb database: 
 mongorestore -d <database_name> <directory_backup>  
 
-(For e.g.:mongorestore -d loginapp DB_DUMP/loginapp/)
+(For e.g.:mongorestore -d loginapp DB_DUMP/loginapp/) - Where loginapp is the name of the database in which all the collections resides.
 
 
 
