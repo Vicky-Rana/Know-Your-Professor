@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KNOW YOUR PROFESSOR</title>
+	<link rel="stylesheet" href="/css/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+	<link rel="stylesheet" href="/css/style.css"/>
+    <script type="text/javascript" src="/js/jQuery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/utility.js"></script>
+</head>
+
+<body>
+
+<div id="divLoading" class="loadingDiv">
+    <img src="/images/loading.gif" alt=""/>
+</div>
+
+<div class="container">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">         
+          <a class="navbar-brand" id="siteLogo" href="/">KNOW YOUR PROFESSOR</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            {{#if user}}
+              <li role="presentation" ><a href="/users/Dashboard">DASHBOARD</a></li>
+              <li role="presentation"><a href="/users/logout">LOGOUT</a></li>
+              <li role="presentation"><a href="/users/aboutus">ABOUT US</a></li>
+            {{else}}
+              <li role="presentation"><a href="/users/login">LOGIN</a></li>
+              <li role="presentation"><a href="/users/register">REGISTER</a></li>
+              <li role="presentation"><a href="/users/aboutus">ABOUT US</a></li>
+            {{/if}}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+      <div class="row PageForms">
+        <div class="col-lg-12">
+            {{#if success_msg}}
+                <div class="alert alert-success">
+                  {{success_msg}}
+                </div>
+            {{/if}}
+            
+             {{#if error_msg}}
+                <div class="alert alert-danger">{{error_msg}}</div>  
+            {{/if}}
+
+            {{#if error}}
+              <div class="alert alert-danger">{{error}}</div>
+            {{/if}}
+
+            {{#if errors}}
+                {{#each errors}}
+                    <div class="alert alert-danger">{{msg}}</div>
+                {{/each}}
+            {{/if}}
+            <div id="divCustomMsg" style="display:none"></div>
+          {{{body}}}
+        </div>
+      </div>  
+
+      <footer class="footer">
+        <p>&copy; Team Integrators, Spring 2017, All rights reserved.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+</body>
+
+</html>

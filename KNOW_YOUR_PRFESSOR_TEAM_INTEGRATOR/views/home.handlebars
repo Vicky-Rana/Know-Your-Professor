@@ -1,0 +1,28 @@
+﻿
+
+    <div id="profInfo" style="display:none">
+    <label id="lblProfName"></label>
+</div>
+<h1 class="form-group" id="homeMsg">What Do You Want To Do ? </h1>
+<form method="post" action="/ratings/viewRatings">
+    <div class="form-gorup">
+        
+
+        <br><button title="Press to Search Ratings of a Professor" type="submit" class="btn btn-default btn-primary" id="btnSeachProfessor">Search Professor</button>
+    </div>
+</form>
+{{#if user}}
+<form method="get" action="/ratings/rating/">
+    <div class="form-group">
+        
+            <button title="Press to Rate a Professor" type="submit" class="btn btn-default btn-primary" id="btnRateProfessor">Rate Professor</button>
+    </div>
+</form>
+{{else}}
+<form method="get" action="/users/login">
+    <div class="form-group">
+        
+            <button title="Press to Rate a Professor" type="submit" class="btn btn-default btn-primary" id="btnRateProfessor">Rate Professor</button>
+    </div>
+</form>
+{{/if}}

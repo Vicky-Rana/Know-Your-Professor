@@ -1,0 +1,66 @@
+﻿<form id="frmRatings" action="/ratings/saveratings" method="post" class="well">
+    <h1 class="page-header">RATE YOUR PROFESSOR</h1>
+    <div class="form-group">
+        <input type="hidden" id="hdnRowId" name="hdnRowId" value="" />
+    </div>
+    <div class="form-group">
+        <label for="ddnYear">YEAR</label>
+        <select id="ddnYear" name="ddnYear" class="form-control">
+            <option value="">Please select</option>
+            {{#each years}}
+            <option value="{{this}}">{{this}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="ddnTerm">TERM</label>
+        <select id="ddnTerm" name="ddnTerm" class="form-control" disabled></select>
+    </div>
+    <div class="form-group">
+        <label for="ddnDepartment">DEPARTMENT</label>
+        <select id="ddnDepartment" name="ddnDepartment" class="form-control" disabled></select>
+    </div>
+    <div class="form-group">
+        <label for="ddnCourses">COURSES</label>
+        <select id="ddnCourses" name="ddnCourses" class="form-control" disabled></select>
+    </div>
+    <div class="form-group">
+        <label for="ddnProfessors">PROFESSOR</label>
+        <select id="ddnProfessors" name="ddnProfessors" class="form-control" disabled></select>
+    </div>
+   
+ <div class="form-group">
+        <label for="takeAgain">WOULD YOU TAKE THIS PROFESSOR AGAIN?</label>
+        <select id="takeAgain" name="takeAgain" class="form-control" disabled>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="grading">GRADING CRITERIA</label>
+        <select id="grading" name="grading" class="form-control" disabled>
+        </select>
+    </div>
+     <div class="form-group">
+        <label for="assignments">DIFFICULTY</label>
+        <select id="assignments" name="assignments" class="form-control" disabled>
+        </select>
+    </div>
+     <div class="form-group">
+        <label for="ddnRatings">RATE YOUR PROFESSOR</label>
+        <select id="ddnRatings" name="ddnRatings" class="form-control" disabled>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="txtComments">COMMENTS</label>
+        <textarea id="txtComments" name="txtComments" class="form-control" disabled></textarea>
+    </div>
+    <div class="form-group">
+        <input type="submit" id="btnSubmit" name="btnSubmit" value="Submit Rating" class="btn btn-default btn-primary" />
+    </div>
+</form>
+<script src="/js/ratings.js" type="text/javascript"></script>
+{{#if ratings}}
+<script>
+    let decodedJson = decodeURIComponent("{{{ratings}}}");
+    prepopulatedRating = JSON.parse(decodedJson);
+</script>
+{{/if}}

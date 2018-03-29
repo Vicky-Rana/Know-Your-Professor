@@ -1,0 +1,39 @@
+<form method="post" action="/users/register" class= "well">
+<h1 class="page-header">USER REGISTRATION</h1>
+    <div class="form-gorup">
+        <label for="txtName">FULL NAME</label>
+        <input type="text" class="form-control" placeholder="Full Name" name="txtName" id="txtName" value="{{User.name}}">
+    </div>
+    <div class="form-gorup">
+        <label for="txtUsername" >USERNAME</label>
+        <input type="text" class="form-control" placeholder="Username" name="txtUsername" id="txtUsername" value="{{User.userName}}">
+    </div>
+    <div class="form-gorup">
+        <label for="txtEmail">EMAIL</label>
+        <input type="email" class="form-control" placeholder="Email" name="txtEmail" id="txtEmail" value="{{User.email}}">
+    </div>
+    <div class="form-group">
+        <label for="txtPassword">PASSWORD</label>
+        <input type="password" class="form-control" placeholder="Password" name="txtPassword" id="txtPassword" minlength="4" maxlength="12">
+    </div>
+    <div class="form-group">
+        <label for="txtPassword2">CONFIRM PASSWORD</label>
+        <input type="password" class="form-control" placeholder="Confirm Password" name="txtPassword2" id="txtPassword2" minlength="4" maxlength="12">
+    </div>
+    <div class="form-group">
+        <label for="ddnSecQuestion">SECURITY QUESTION</label>
+        <select id="ddnSecQuestion" name="ddnSecQuestion" class="form-control">
+            <option value="">Please select</option>
+            <option value="petname">What is your pet's name?</option>
+            <option value="favcolor">What is your favorite color?</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="txtSecurityAnswer">SECURITY QUESTION ANSWER</label>
+        <input type="text" class="form-control" placeholder="Security question's answer" name="txtSecurityAnswer" id="txtSecurityAnswer" value="{{User.securityAnswer}}" />
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-default btn-primary" name="btnSubmit" id="btnSubmit">Register</button>
+    </div>
+</form>
+<script type="text/javascript" src="/js/register.js"></script>

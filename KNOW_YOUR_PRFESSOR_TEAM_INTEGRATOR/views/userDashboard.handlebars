@@ -1,0 +1,28 @@
+
+<h1>WELCOME {{name}} </h1>
+<div class='rateProf'>
+
+<form method="post" action="/ratings/viewRatings">
+    <div class="form-gorup">
+		<a href="/ratings/rating" class='btn pull-left btn-primary '>Rate Professor</a>
+        <button type="submit" class="btn pull-right btn-default btn-primary">Search Professor</button>
+    </div>
+</form>
+</div>
+<h2> YOU PREVIOUSLY RATED </h2>
+{{#each results}}
+	<div class="well ratingsAllProf">
+		<span class="profName" title="Click Here to See/Edit this Rating">
+    <a href="/ratings/getRatingInfo/{{this.id}}">{{this.name}}</a> 
+		</span>
+		<span class="starRating">
+			{{#times this.rating}}
+
+			{{/times}}
+		</span>
+		<span class="ratingCls pull-right">	
+			{{this.rating}} Ratings
+		</span>
+
+	</div>
+{{/each}}
